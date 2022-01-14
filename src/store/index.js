@@ -84,14 +84,6 @@ const errorHandling = {
             if (payload.data.message === null) {
                 state.showErrorMessage = false
                 state.errorMessage = null
-            } else if (payload.status === 401) {
-                window.localStorage.removeItem('token')
-                state.showErrorMessage = true
-                state.errorMessage = "You have no access to this section or your token is expired ." +
-                    "You will be redirected to Login page shortly"
-                setTimeout(() => {
-                    router.push({path: '/login'})
-                }, 5000)
             } else {
                 state.showErrorMessage = true
                 state.errorMessage = payload.data.message
