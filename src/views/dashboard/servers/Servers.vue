@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-      <v-card>
+      <v-card :loading="loading">
         <v-card-title>
           Vm List
         </v-card-title>
@@ -22,6 +22,7 @@ export default {
   props: {},
   data() {
     return {
+      loading:false,
       items: [],
       headers: [
         {text: 'Name', value: 'NAME'},
@@ -36,8 +37,10 @@ export default {
   methods: {
     ...mapActions(['getUserVmList']),
     async init() {
+      this.loading = true
       await this.getUserVmList()
       this.items = this.$store.getters.vmList
+      this.loading = false
     }
   }
 };

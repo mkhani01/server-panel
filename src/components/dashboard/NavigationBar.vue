@@ -27,15 +27,23 @@
         <v-icon v-if="!$vuetify.theme.dark" dark>mdi-moon-waning-crescent</v-icon>
         <v-icon v-else dark>mdi-white-balance-sunny</v-icon>
       </v-btn>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
       <v-btn
           @click="logout"
           fab
+          v-bind="attrs"
+          v-on="on"
           class="mr-3 white--text"
           text
           small
       >
         <v-icon dark>mdi-logout</v-icon>
       </v-btn>
+        </template>
+        <span>Log out</span>
+      </v-tooltip>
+
     </v-app-bar>
     <v-navigation-drawer
         v-model="sidebar"
@@ -49,7 +57,6 @@
             <img src="../../assets/avatar-placeholder.png" alt="avatar">
           </v-list-item-avatar>
         </v-list-item>
-
         <v-list-item class="white--text" link>
           <v-list-item-content>
             <v-list-item-title class="text-h6">
@@ -61,7 +68,7 @@
       </v-list>
       <v-divider></v-divider>
       <v-list-group
-          :value="false"
+          :value="true"
           no-action
       >
         <template v-slot:activator style="padding-right: 0 !important">
