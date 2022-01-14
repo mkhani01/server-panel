@@ -16,7 +16,7 @@ const routes = [
     },
     {
         path: "/dashboard",
-        name: "",
+        name: "Dashboards",
         children: [
             {
                 path: '/servers',
@@ -45,7 +45,7 @@ router.beforeEach((to, from, next) => {
         return next('/')
     }
     if ((to.path === "/") && isTokenSet) {
-        return next('/dashboard')
+        return next('/servers')
     }
     return next()
 })

@@ -27,7 +27,6 @@
             block
             type="submit"
             :disabled="!formValidation"
-            @click="onSignInFunc"
             :loading="loading">Sign in</v-btn>
 
       </v-form>

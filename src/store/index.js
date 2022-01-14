@@ -33,7 +33,7 @@ const authModule = {
                     if (response.status === 201) {
                         commit('setToken', JSON.stringify(response.data.token))
                         window.localStorage.setItem('token', JSON.stringify(response.data.token))
-                        router.push({path: '/servers'})
+                        router.push({name: 'servers'})
                     }
                 })
                 .catch((err) => {

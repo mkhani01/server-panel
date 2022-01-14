@@ -11,7 +11,7 @@
             <v-card :class="[(index === selectedTemplateIndex) ? 'active' : '']"
                     :elevation="(index === selectedTemplateIndex) ? 5 : 2">
               <v-img
-                  height="250"
+                  height="200"
                   :src="`https://odev.abrnoc.com/${template.logo_url}`"
               ></v-img>
               <v-card-title>

@@ -66,7 +66,7 @@
 <script>
 
 export default {
-  name: "server Config",
+  name: "serverConfig",
   props: ["osInfo"],
   data() {
     return {
